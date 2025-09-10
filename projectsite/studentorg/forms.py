@@ -26,3 +26,9 @@ class CollegeForm(ModelForm):
     class Meta:
         model = College
         fields = "__all__"
+
+
+class ProgramForm(ModelForm):
+    class Meta:
+        model = Program
+        fields = "__all__"
