@@ -19,6 +19,14 @@ class OrgMemberList(ListView):
     context_object_name = 'orgmember'
     template_name = 'member_list.html'
     paginate_by = 5
+    ordering = ["student__lastname","student__firstname", "date_joined"]
+
+    def get_ordering(self):
+        allowed = ["student__lastname", "student__firstname", "date_joined"]
+        sort_by = self.request.GET.get("sort_by")
+        if sort_by in allowed:
+            return sort_by
+        return "student"
 
     def get_queryset(self):
         qs = super().get_queryset()
