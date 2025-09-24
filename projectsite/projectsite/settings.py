@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     "widget_tweaks",
 ]
 
-SITE_ID = 2
+SITE_ID = 3
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
