@@ -6,8 +6,10 @@ from studentorg.forms import OrganizationForm, OrgMemberForm, StudentForm, Colle
 from django.urls import reverse_lazy
 from django.db.models import Q
 from django.utils import timezone
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-class OrganizationDeleteView(DeleteView):
+
+class OrganizationDeleteView(LoginRequiredMixin, DeleteView):
     model = Organization
     template_name = 'org_del.html'
     success_url = reverse_lazy('organization-list')
